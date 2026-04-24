@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>OliNox</title>
+  <style>
+    :root {
+      --bg: #020304;
+      --panel: #06080b;
+      --line: rgba(255, 255, 255, 0.06);
+      --text: #f4f4f6;
+      --muted: #8d93a1;
+      --soft: #bfc5d2;
+      --accent: #6c63ff;
+      --accent-2: #7d5cff;
+      --card-shadow: 0 0 60px rgba(65, 90, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 30% 55%, rgba(56, 75, 255, 0.08), transparent 28%),
+        radial-gradient(circle at 60% 30%, rgba(130, 40, 255, 0.06), transparent 20%),
+        linear-gradient(180deg, #010203 0%, #020406 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .topbar {
+      height: 84px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 34px;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(4px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.55rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-icon {
+      color: var(--accent);
+      font-size: 1.2rem;
+      transform: translateY(-1px);
+    }
+
+    .nav {
+      display: flex;
+      gap: 34px;
+    }
+
+    .nav a {
+      color: #d4d8e2;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: #fff;
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 86px 60px 70px;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 1040px;
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 76px;
+      align-items: start;
+    }
+
+    /* Left column */
+    .album-panel {
+      padding-top: 54px;
+    }
+
+    .cover-wrap {
+      width: 450px;
+      height: 450px;
+      background: linear-gradient(180deg, rgba(7, 9, 12, 0.98), rgba(3, 4, 8, 1));
+      border-radius: 4px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 52%, rgba(102, 73, 255, 0.15), transparent 34%),
+        radial-gradient(circle at 48% 50%, rgba(129, 40, 255, 0.12), transparent 24%);
+      pointer-events: none;
+    }
+
+    .cover-image {
+      position: absolute;
+      inset: 98px 74px 98px 74px;
+      border-radius: 2px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.06) 8%, transparent 14%),
+        radial-gradient(circle at 36% 46%, rgba(92, 191, 255, 0.8), transparent 18%),
+        radial-gradient(circle at 50% 50%, rgba(132, 51, 255, 0.95), transparent 30%),
+        radial-gradient(circle at 70% 45%, rgba(189, 76, 255, 0.75), transparent 18%),
+        linear-gradient(180deg, #0a0912 0%, #05060a 100%);
+      filter: saturate(1.15);
+      overflow: hidden;
+    }
+
+    .cover-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 52% 49%, transparent 0 16%, rgba(0,0,0,0.45) 34%, transparent 47%),
+        radial-gradient(circle at 44% 50%, rgba(255,255,255,0.16), transparent 9%),
+        radial-gradient(circle at 62% 52%, rgba(255,255,255,0.08), transparent 7%);
+      mix-blend-mode: screen;
+      opacity: 0.6;
+    }
+
+    .cover-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.8) 0.7px, transparent 0.8px);
+      background-size: 38px 38px;
+      opacity: 0.18;
+    }
+
+    .album-info {
+      margin-top: 24px;
+    }
+
+    .album-title {
+      font-size: 2.2rem;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .artist-name {
+      color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* Right column */
+    .tracklist-panel {
+      padding-top: 6px;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: #cfd4e1;
+      margin-bottom: 28px;
+    }
+
+    .tracklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .track {
+      display: grid;
+      grid-template-columns: 48px 1fr 58px 48px;
+      align-items: center;
+      gap: 18px;
+      min-height: 42px;
+    }
+
+    .track-number {
+      color: #9aa2b0;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .track-name {
+      font-size: 1.02rem;
+      color: #ffffff;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .track-duration {
+      color: #c8cdda;
+      text-align: right;
+      font-size: 0.98rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .play-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.03);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.09);
+    }
+
+    .play-btn svg {
+      width: 15px;
+      height: 15px;
+      fill: #f2f4fa;
+      margin-left: 1px;
+    }
+
+    .play-btn.playing {
+      background: rgba(108, 99, 255, 0.18);
+      border-color: rgba(108, 99, 255, 0.32);
+    }
+
+    .play-btn.playing svg {
+      margin-left: 0;
+    }
+
+    .track.active .track-name {
+      color: #b9b4ff;
+    }
+
+    .track.active .track-number,
+    .track.active .track-duration {
+      color: #d8d3ff;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      color: #9aa1ad;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 1050px) {
+      .content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .album-panel {
+        padding-top: 0;
+      }
+
+      .cover-wrap {
+        width: 100%;
+        max-width: 460px;
+        aspect-ratio: 1 / 1;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .topbar {
+        padding: 0 18px;
+      }
+
+      .nav {
+        gap: 16px;
+      }
+
+      .main {
+        padding: 36px 18px 40px;
+      }
+
+      .track {
+        grid-template-columns: 40px 1fr 48px 42px;
+        gap: 12px;
+      }
+
+      .album-title {
+        font-size: 1.8rem;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .footer {
+        padding: 0 18px;
+        font-size: 0.88rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="topbar">
+      <a href="#" class="brand">
+        <span class="brand-icon">♪</span>
+        <span>OliNox</span>
+      </a>
+
+      <nav class="nav">
+        <a href="https://olinox.hashnode.dev/">Blog</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="content">
+        <div class="album-panel">
+          <div>
+           <img src="webalbum.jpg" width="100%">
+          </div>
+
+          <div class="album-info">
+            <h1 class="album-title">WAVES</h1>
+            <a href="#" class="artist-name">OliNox</a>
+            <div class="meta">2026 • 12 tracks • 52 min</div>
+          </div>
+        </div>
+
+        <div class="tracklist-panel">
+          <h2 class="section-title">TRACKLIST</h2>
+
+          <ul class="tracklist">
+            <li class="track" data-src="W01 - Waves.mp3">
+              <div class="track-number">01</div>
+              <div class="track-name">Waves</div>
+              <div class="track-duration">3:47</div>
+              <button class="play-btn" aria-label="Play Midnight Pulse">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W02 - Poison.mp3">
+              <div class="track-number">02</div>
+              <div class="track-name">Poison</div>
+              <div class="track-duration">4:17</div>
+              <button class="play-btn" aria-label="Play Neon Dreams">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W03 - Dance like this.mp3">
+              <div class="track-number">03</div>
+              <div class="track-name">Dance like this</div>
+              <div class="track-duration">3:26</div>
+              <button class="play-btn" aria-label="Play Fading Horizons">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W04 - Corporate.mp3">
+              <div class="track-number">04</div>
+              <div class="track-name">Corporate</div>
+              <div class="track-duration">6:28</div>
+              <button class="play-btn" aria-label="Play Electric Whispers">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W05 - Another Day.mp3">
+              <div class="track-number">05</div>
+              <div class="track-name">Another Day</div>
+              <div class="track-duration">4:28</div>
+              <button class="play-btn" aria-label="Play Shadow Dance">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W06 - This is the end of the world.mp3">
+              <div class="track-number">06</div>
+              <div class="track-name">This is the end of the world</div>
+              <div class="track-duration">4:20</div>
+              <button class="play-btn" aria-label="Play Infinite Loop">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W07 - My body cracks.mp3">
+              <div class="track-number">07</div>
+              <div class="track-name">My body cracks</div>
+              <div class="track-duration">4:58</div>
+              <button class="play-btn" aria-label="Play Crystal Frequencies">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W08 - The Boy and The Hope.mp3">
+              <div class="track-number">08</div>
+              <div class="track-name">The boy and The Hope</div>
+              <div class="track-duration">4:26</div>
+              <button class="play-btn" aria-label="Play Void Walker">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W09 - A bad friend.mp3">
+              <div class="track-number">09</div>
+              <div class="track-name">A bad friend</div>
+              <div class="track-duration">3:02</div>
+              <button class="play-btn" aria-label="Play Spectral Light">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W10 - In love with the enemy.mp3">
+              <div class="track-number">10</div>
+              <div class="track-name">In love with the ennemy</div>
+              <div class="track-duration">3:57</div>
+              <button class="play-btn" aria-label="Play Binary Sunset">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W11 - The sun.mp3">
+              <div class="track-number">11</div>
+              <div class="track-name">The sun</div>
+              <div class="track-duration">4:19</div>
+              <button class="play-btn" aria-label="Play Deep Current">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li class="track" data-src="W12 - Apocalypse.mp3">
+              <div class="track-number">12</div>
+              <div class="track-name">Apocalypse</div>
+              <div class="track-duration">3:31</div>
+              <button class="play-btn" aria-label="Play Echoes of Night">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© 2026 OliNox</div>
+      <div class="footer-links">
+        <a href="https://open.spotify.com/album/5oUDbiSjtouwTwRmbjfarG">SPOTIFY</a>
+        <a href="https://music.apple.com/us/album/waves/1888744238">APPLE MUSIC</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const audio = new Audio();
+    let currentButton = null;
+    let currentTrack = null;
+
+    const playIcon = `
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"></path>
+      </svg>
+    `;
+
+    const pauseIcon = `
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M7 5h4v14H7zm6 0h4v14h-4z"></path>
+      </svg>
+    `;
+
+    function resetAllButtons() {
+      document.querySelectorAll(".play-btn").forEach(btn => {
+        btn.classList.remove("playing");
+        btn.innerHTML = playIcon;
+      });
+
+      document.querySelectorAll(".track").forEach(track => {
+        track.classList.remove("active");
+      });
+    }
+
+    document.querySelectorAll(".play-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const track = button.closest(".track");
+        const src = track.dataset.src;
+
+        if (currentButton === button && !audio.paused) {
+          audio.pause();
+          button.classList.remove("playing");
+          button.innerHTML = playIcon;
+          track.classList.remove("active");
+          return;
+        }
+
+        resetAllButtons();
+
+        currentButton = button;
+        currentTrack = track;
+
+        audio.src = src;
+        audio.play().catch(err => {
+          console.error("Audio playback failed:", err);
+          alert("Could not play the audio file. Check the MP3 path.");
+        });
+
+        button.classList.add("playing");
+        button.innerHTML = pauseIcon;
+        track.classList.add("active");
+      });
+    });
+
+    audio.addEventListener("ended", () => {
+      resetAllButtons();
+      currentButton = null;
+      currentTrack = null;
+    });
+
+    audio.addEventListener("pause", () => {
+      if (audio.currentTime > 0 && audio.currentTime < audio.duration) {
+        if (currentButton) {
+          currentButton.classList.remove("playing");
+          currentButton.innerHTML = playIcon;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
