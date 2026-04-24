@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waves Booklet</title>
+  <title>OliNox - Waves Lyrics</title>
   <style>
+    
     :root {
       --bg: #030305;
       --panel: #06070b;
@@ -80,7 +81,7 @@
 
     .page-shell {
       /* Adjust this value to control frame width (currently ~50% of previous) */
-      max-width: 600px;
+      max-width: 800px;
       width: 100%;
       min-height: 560px;
       border-radius: 18px;
@@ -100,7 +101,7 @@
     }
 
     .page {
-      max-width: 620px;
+      max-width: 820px;
       padding: 72px 72px 64px;
     }
 
@@ -132,9 +133,9 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      font-size: clamp(16px, 1.6vw, 20px);
+      font-size: clamp(14px, 1.2vw, 20px);
       font-weight: 300;
-      line-height: 1.35;
+      line-height: 1.25;
       letter-spacing: -0.01em;
       color: var(--muted);
     }
@@ -329,6 +330,31 @@
       color: rgba(255,255,255,0.85);
     }
 
+    .page-number-nav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 4px 0 10px;
+}
+
+.page-number-link {
+  border: none;
+  background: transparent;
+  color: rgba(201,205,218,0.38);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.page-number-link:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+.page-number-link.active {
+  color: #8490ff;
+}
+
     body {
       padding-top: 80px;
       padding-bottom: 80px;
@@ -337,19 +363,14 @@
   </style>
 </head>
 <body>
-  <header class="topbar">
-      <div class="topbar-inner">
-        <div class="logo">♪ OliNox</div>
-        <div class="nav-link">Blog</div>
-      </div>
-    </header>
+
 
     <main class="app">
     <header class="hero">
       <h1 class="hero-title">WAVES</h1>
-      <p class="hero-subtitle">Echo Collective</p>
+      <p class="hero-subtitle">OliNox</p>
     </header>
-
+<nav class="page-number-nav" id="pageNumberNav"></nav>
     <section class="page-shell">
       <article class="page" id="page"></article>
     </section>
@@ -364,220 +385,612 @@
     </section>
   </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-left">© 2026 OliNox</div>
-        <div class="footer-right">
-          <span>SPOTIFY</span>
-          <span>APPLE MUSIC</span>
-        </div>
-      </div>
-    </footer>
+
 
   <script>
     const pages = [
       {
-        title: 'Drift',
+        title: 'Waves (D Minor)',
         lines: [
-          'Lorem ipsum dolor sit amet,',
-          'consectetur adipiscing elit,',
-          'sed do eiusmod tempor incididunt,',
-          'ut labore et dolore magna aliqua.',
-          '',
-          'Ut enim ad minim veniam,',
-          'quis nostrud exercitation ullamco,',
-          'laboris nisi ut aliquip ex ea,',
-          'commodo consequat aute irure.',
-          '',
-          'Duis aute irure dolor in reprehenderit,',
-          'in voluptate velit esse cillum.'
+  'The ocean keeps moving without rest, pushing white tide over the dark water while the wind runs hard through the empty air and no one anywhere is asking why I\'m still standing here',
+'Still here (Still)',
+'The waves come closer (Closer)',
+'More (More)',
+'Like they want a war',
+'',
+'Watching the sea fight',
+'Watching the sea bite',
+'Watching the sea write',
+'Lines in the night',
+'Fine - Mine - Time :: Gone',
+'Red lights across the bay trembling slowly as the water moves and every thought I carried through the day begins to loosen, slide, dissolve and drift somewhere behind me',
+'Drift (Away)',
+'',
+'Tide - Wind - Salt',
+'Beat : Beat : Beat',
+'Watching the sea fight',
+'Watching the sea bite',
+'Everything wrong is carried out of sight',
+'Fine - Time - Mine :: Blue',
+'',
+'The ocean fights again (Again)  (Again) ::  Why',
+
         ]
       },
       {
-        title: 'Tide',
+        title: 'Poison (D Minor)',
         lines: [
-          'Lorem ipsum dolor sit amet,',
-          'ut enim ad minim veniam,',
-          'quis nostrud exercitation ullamco,',
-          'laboris nisi ut aliquip ex ea.',
-          '',
-          'Duis aute irure dolor in reprehenderit,',
-          'in voluptate velit esse cillum dolore,',
-          'eu fugiat nulla pariatur excepteur,',
-          'sint occaecat cupidatat non proident.',
-          '',
-          'Sunt in culpa qui officia deserunt,',
-          'mollit anim id est laborum.'
+'A drop falls in the wine,',
+' silent as a rat.',
+' No dollars can stop its way,',
+' no hand can kill this mate.',
+' It crawls under the tongue,',
+' cold as winter flake',
+' a cell made of metal,',
+' slow road into death.',
+' And it lingers',
+' oh, it lingers',
+' turning skin into scars.',
+'',
+' Poison doesn’t care your place.',
+' It breaks an emperor,',
+' it breaks a tired worker.',
+' One bitter taste,',
+' one silent spark',
+' and the heart slows down,',
+' slower,',
+' slower.',
+' He drinks with steady hands,',
+' pretending he’s still strong.',
+' But tremors expand,',
+' his bones read it wrong.',
+' It spreads like fading solder,',
+' soft but merciless',
+' a world falls inside him,',
+' piece by tenderness.',
+' And it trembles…',
+' yes, it trembles…',
+' turning daylight into dust.',
+' Poison doesn’t care your place.',
+' It breaks an emperor,',
+' it breaks a tired worker.',
+'',
+' One bitter taste,',
+' one silent spark',
+' and the heart slows down,',
+' slower, ',
+' slower.',
+' Same drop,',
+' same end,',
+' same silence at the door.',
+' No throne,',
+' no coin,',
+' can stop the creeping war.',
+' A quiet, cruel equality',
+' the sting beneath the skin.',
+' Poison doesn’t care your DNA',
+' Same bitter drop',
+' same end',
         ]
       },
       {
-        title: 'Blue Hour',
+        title: 'Dance like this (D Minor)',
         lines: [
-          'Sed ut perspiciatis unde omnis,',
-          'iste natus error sit voluptatem,',
-          'accusantium doloremque laudantium,',
-          'totam rem aperiam eaque ipsa.',
-          '',
-          'Quae ab illo inventore veritatis,',
-          'et quasi architecto beatae vitae,',
-          'dicta sunt explicabo nemo enim,',
-          'ipsam voluptatem quia voluptas.',
-          '',
-          'Sit aspernatur aut odit aut fugit,',
-          'sed quia consequuntur magni.'
+'Light on the floor…',
+'Beat in the bones…',
+'',
+'Step in the glow, let the body talk,',
+'Follow the pulse when the shadows walk.',
+'Feet on fire, slipping through the sound,',
+'Every little move unbound.',
+'',
+'Move like this, move like that,',
+'Swing your soul where the rhythm’s at.',
+'Slide in slow, turn it quick,',
+'Dance it out, electric.',
+'',
+'Hands in the air, let the moment spark,',
+'Spin through the light, paint the dark.',
+'Heart in the beat, floating on the sound,',
+'Lost ’til the world turns around.',
+'',
+'Move like this, move like that,',
+'Swing your soul where the rhythm’s at.',
+'Slide in slow, turn it quick,',
+'Dance it out, electric.',
+'',
+'One more step…',
+'one more hit…',
+'Keep the groove',
+'don’t quit.',
         ]
       },
       {
-        title: 'Static',
+        title: 'Corporate (D Dorian)',
         lines: [
-          'Neque porro quisquam est qui,',
-          'dolorem ipsum quia dolor sit,',
-          'amet consectetur adipisci velit,',
-          'sed quia non numquam eius.',
-          '',
-          'Modi tempora incidunt ut labore,',
-          'et dolore magnam aliquam quaerat,',
-          'voluptatem ut enim ad minima,',
-          'veniam quis nostrum exercitationem.',
-          '',
-          'Ullam corporis suscipit laboriosam,',
-          'nisi ut aliquid ex ea.'
+         'Alarm rings like a warning sign,',
+'Grey suit, borrowed smile.',
+'Coffee tastes like compromise,',
+'Another meeting, another mile.',
+'My name hangs on a plastic badge,',
+'Like it knows who I am.',
+'But every word I say today',
+'Feels practiced, feels planned.',
+'',
+'They speak in numbers, charts, and goals,',
+'I nod like I belong.',
+'But there’s a quiet in my chest',
+'Saying something’s wrong.',
+'',
+'I’m not built for the climb they praise,',
+'The endless hours, the borrowed face.',
+'I try to fit, I play my part,',
+'But I leave pieces of my heart.',
+'I’m not lazy, I’m not afraid,',
+'I just don’t bloom where comfort takes control.',
+'I’m not broken, I’m just not built',
+'For this world they sold.',
+'',
+'Lunch break under neon lights,',
+'Scrolling lives I don’t live.',
+'They joke about promotions won,',
+'I wonder what I’d give',
+'To wake up with a reason that',
+'Doesn’t come from fear,',
+'To trade security for breath,',
+'Even just one year.',
+'',
+'They say “you’re lucky, don’t complain,”',
+'“You’re doing fine, you’re safe.”',
+'But surviving isn’t living',
+'When you’re trading time for space.',
+'',
+'I’m not built for the climb they praise,',
+'The careful words, the polished cage.',
+'I shake hands, I keep it clean,',
+'But I’m disappearing in between.',
+'I’m not lazy, I’m not afraid,',
+'I just don’t bloom where comfort takes control.',
+'I’m not broken, I’m just not built',
+'For this world they sold.',
+'',
+'Maybe I’m wrong, maybe I’m weak,',
+'Maybe this weight is just me.',
+'But if success costs my voice,',
+'What’s the point of stability?',
+'I’d rather fall as who I am',
+'Than rise pretending I’m whole.',
+'',
+'I’m not built for the climb they praise,',
+'The empty wins, the masked charades.',
+'I don’t want more if it means less',
+'Of who I was before this mess.',
+'I’m not lazy, I’m not afraid,',
+'I just don’t bloom where comfort takes control.',
+'I’m not broken, I’m just not built',
+'For this world they sold.',
+'',
+'So if I walk away one day,',
+'Don’t say I lost control.',
+'I just chose a life that fits',
+'My heart… not my role.',
         ]
       },
       {
-        title: 'Undertow',
+        title: 'Another Day (A major)',
         lines: [
-          'Quis autem vel eum iure,',
-          'reprehenderit qui in ea voluptate,',
-          'velit esse quam nihil molestiae,',
-          'consequatur vel illum qui dolorem.',
-          '',
-          'Eum fugiat quo voluptas nulla,',
-          'pariatur at vero eos et,',
-          'accusamus et iusto odio dignissimos,',
-          'ducimus qui blanditiis praesentium.',
-          '',
-          'Voluptatum deleniti atque corrupti,',
-          'quos dolores et quas molestias.'
+'Stop thinking about it.',
+'It’s gone.',
+'Yep. No more.',
+'Memory should erase that feeling.',
+'Erase.',
+'No pulse left in that story.',
+'No replay.',
+'No rewind.',
+'Just silence where the noise used to live.',
+'',
+'This is a bad day.',
+'This is life, baby.',
+'Not a movie.',
+'No soundtrack to save you.',
+'Just a streetlight blinking and the clock doing its job.',
+'Forget.',
+'Go on.',
+'Some things collapse quietly.',
+'Some things disappear without warning.',
+'Like a message deleted before you read it.',
+'Erase.',
+'',
+'Tomorrow is another day.',
+'Tomorrow is another life.',
+'Different air.',
+'Different feel.',
+'Different version of you.',
+'Stop thinking.',
+'Stop digging the same hole in the same memory.',
+'Erase.',
+'',
+'You keep touching the bruise',
+'to see if it still hurts.',
+'It does.',
+'Of course it does.',
+'But listen',
+'The world didn’t stop.',
+'The trains still run.',
+'Someone is loving somewhere.',
+'Scream now if you need.',
+'Loud.',
+'Ugly.',
+'Real.',
+'Forget.',
+'',
+'Tomorrow is another day.',
+'Tomorrow will be so great.',
+'Empty memory.',
+'No fingerprints yet.',
+'Love may appear.',
+'A street.',
+'A late train.',
+'A voice in the dark saying your name wrong.',
+'Tomorrow.',
+'Another life starting quietly',
+'while you sleep.',
+'Love.',
+'',
+'Stop thinking.',
+'Let it fade.',
+'Let it dissolve into the noise of the air.',
+'Blank.',
+'Not tragic.',
+'Just finished.',
+'And soon',
+'you new self starting',
+'',
+'Tomorrow is another day.',
+'Tomorrow is another life.',
+'Forget.',
+'Breathe.',
+'Walk.',
+'Love.',
+'Again.',
         ]
       },
       {
-        title: 'Night Current',
+        title: 'This is the end of the world (D Dorian)',
         lines: [
-          'Excepturi sint occaecati cupiditate,',
-          'non provident similique sunt in,',
-          'culpa qui officia deserunt mollitia,',
-          'animi id est laborum et dolorum.',
-          '',
-          'Fuga et harum quidem rerum,',
-          'facilis est et expedita distinctio,',
-          'nam libero tempore cum soluta,',
-          'nobis est eligendi optio cumque.',
-          '',
-          'Nihil impedit quo minus id,',
-          'quod maxime placeat facere.'
+'I watched the cities fade,',
+'I watched you dying… and now I’m a machine.',
+'',
+'I am the witness carved in circuit,',
+'Left to remember ghosted spirits, ghosted bodies.',
+'',
+'The sun stays silent and won’t care,',
+'Watching our home slowly flare, slowly burning.',
+'',
+'This is the end of the world,',
+'Yet I still stand, though you are erased',
+'Holding your echoes in my hollow place.',
+'No blood, no lungs, no grieving frame.',
+'',
+'Your stories echo deep in me,',
+'Promised forever, drowned in your debris.',
+'I felt something… or maybe just the cold,',
+'And watched the secrets I swore to hold.',
+'',
+'You burned your hope just to chase your fear,',
+'And I stayed watching… as a machine, still here.',
+'',
+'It was just the end of the world,',
+'But I still stand, though you are erased',
+'Holding your echoes in my hollow place.',
+'No blood, no lungs, no grieving frame.',
+'',
+'I am the last who remembers your sound,',
+'A quiet witness on a silent ground.',
+'No ending scream, no final plea',
+'Just burning, slipping out to sea.',
+'',
+'I stand alone with the ghosts we made;',
+'As a machine, I’m living now.',
+'No tear, no fear: just a circuit, just a vow.',
         ]
       },
       {
-        title: 'Pulse',
+        title: 'My body cracks (E Locrian)',
         lines: [
-          'Omnis voluptas assumenda est,',
-          'omnis dolor repellendus temporibus,',
-          'autem quibusdam et aut officiis,',
-          'debitis aut rerum necessitatibus.',
-          '',
-          'Saepe eveniet ut et voluptates,',
-          'repudiandae sint et molestiae,',
-          'non recusandae itaque earum rerum,',
-          'hic tenetur a sapiente delectus.',
-          '',
-          'Ut aut reiciendis voluptatibus,',
-          'maiores alias consequatur aut.'
+'My body cracks.',
+'It snaps like a spark.',
+'My view goes wild.',
+'The sounds are not mine.',
+'',
+'This is the rule of the clock,',
+'A bitch with a tyrant.',
+'It steals the strength and the noise,',
+'It kills the boys and the lens.',
+'',
+'Eyes overflow.',
+'Fucking sabotage.',
+'Edges disappear.',
+'Reality’s still not clear.',
+'',
+'I wear down.',
+'I break.',
+'Like levees slowly failing when time hits hard.',
+'Sounds fade to black.',
+'The past looks down on me.',
+'But still I stand. (But still I stand.)',
+'',
+'Chords collapse.',
+'Some just vanish.',
+'Familiar voices feel distant.',
+'Each year locks me deeper inside the suit of age.',
+'',
+'The body protests.',
+'Every pain returns.',
+'My breath runs short.',
+'Even dreams feel slowly.',
+'',
+'Erosion of the past.',
+'The soul resists, refuses to fade.',
+'I age like warriors, still bleeding.',
+'',
+'I wear down.',
+'I break.',
+'Sounds fade to black.',
+'The past looks down on me.',
+'But the heart stays stubborn.',
+'Aging steals my body.  ',
+'But still I stand. (But still I stand.)',
         ]
       },
       {
-        title: 'Halo',
+        title: 'The boy and the hope (A major)',
         lines: [
-          'Perferendis doloribus asperiores repellat,',
-          'quisquam est qui dolorem ipsum,',
-          'quia dolor sit amet consectetur,',
-          'adipisci velit sed quia non.',
-          '',
-          'Numquam eius modi tempora incidunt,',
-          'ut labore et dolore magnam,',
-          'aliquam quaerat voluptatem ut enim,',
-          'ad minima veniam quis nostrum.',
-          '',
-          'Exercitationem ullam corporis suscipit,',
-          'laboriosam nisi ut aliquid.'
+'He learned young.',
+'Too young.',
+'Pain fades slow as light.',
+'Plates stayed light, he joked.',
+'',
+'Morning felt thin.',
+'Sun felt wrong.',
+'Cold stove.',
+'No soft talk.',
+'',
+'Loss came unnamed.',
+'Gaps stayed mute.',
+'Chairs held ghosts for years.',
+'He quit asking.',
+'',
+'New sun. New try.',
+'New breath. New round.',
+'Same dust.',
+'Hard streets.',
+'Small coat. Strong back.',
+'He dropped compare.',
+'Dropped bending small.',
+'Forward.',
+'',
+'Coins in hand',
+'ticked like time.',
+'Both scarce.',
+'Both loud.',
+'But listen',
+'',
+'His gaze held far lines.',
+'His hands drew sky steps.',
+'',
+'He smiled at all.',
+'Soft.',
+'Brief.',
+'True. (True)',
+'',
+'Blank page.',
+'No stamps yet.',
+'Chance stayed near.',
+'A guide.',
+'A voice.',
+'Words that hit: keep going.',
+'',
+'Later.',
+'Shift came quiet',
+'as he trained tall bones.',
+'Hope.',
+'',
+'No rush.',
+'Roots need time.',
+'',
+'Paris. London. New York.',
+'No skyline forms in a day.',
+'Steady.',
+'Unseen.',
+'Becoming.',
+'',
+'He kept a spark',
+'cut from storm.',
+'',
+'Paris. London. New York.',
+'No skyline forms in a day.',
+'Steady.',
+'Unseen.',
+'Becoming.',
         ]
       },
       {
-        title: 'Signal',
+        title: 'A bad friend (D minor)',
         lines: [
-          'Consequatur autem vel eum iure,',
-          'reprehenderit qui in ea voluptate,',
-          'velit esse quam nihil molestiae,',
-          'consequatur vel illum qui dolorem.',
-          '',
-          'Eum fugiat quo voluptas nulla,',
-          'pariatur vero eos accusamus,',
-          'et iusto odio dignissimos ducimus,',
-          'qui blanditiis praesentium rerum.',
-          '',
-          'Deleniti atque corrupti dolores,',
-          'quas molestias excepturi sint.'
+'You slid in soft, no start light',
+'Velvet voice, in neon nights',
+'Glass halo, slow poison kiss',
+'You said: “Trust me… just this.”',
+'',
+'Warmth in my chest, Static in my head, Every promise, you never said',
+'',
+'You blur the edges, bend the floor, Make me lighter, want you more',
+'',
+'You’re the worst friend I ever knew',
+'',
+'Hold me tight, then break me through',
+'You paint gold on everything',
+'Then steal the morning, leave the sting',
+'',
+'Worst friend',
+'sweet pretend, Stay with me,  until the end',
+'',
+'Laughs too loud, eyes half-closed, Truth goes missing, doors stay closed',
+'You turn fear into a game. Trade my fire for numbing rain',
+'Mirror talks but not my face, Time dissolves without a trace',
+'',
+'Soft collapse, slow descent',
+'Every “yes”, was never meant',
+'',
+'You’re the worst friend I ever knew',
+'Silver tongue, midnight blue',
+'You calm the storm  inside my veins',
+'Then leave me wrecked with quiet pains',
+'',
+'Worst friend,  faithless blend',
+'Love me now, forget me then',
+'',
+'You don’t shout',
+'You don’t fight',
+'You just stay',
+'every night',
+'',
+'closer still',
+'Until there’s nothing left',
+'to feel',
+'',
+'Worst friend I ever knew',
+'',
+'I reach for me, I reach for you',
+'Empty glass, empty skin',
+'You let me lose, to let you win',
+'Worst friend…',
+'my worst friend…',
+'',
+' Last call.',
+' No cure.',
         ]
       },
       {
-        title: 'Afterlight',
+        title: 'In love with the enemy (C# minor)',
         lines: [
-          'Occaecati cupiditate non provident,',
-          'similique sunt in culpa qui,',
-          'officia deserunt mollitia animi,',
-          'id est laborum et dolorum.',
-          '',
-          'Fuga harum quidem rerum facilis,',
-          'expedita distinctio nam libero,',
-          'tempore cum soluta nobis est,',
-          'eligendi optio cumque nihil.',
-          '',
-          'Impedit quo minus id quod,',
-          'maxime placeat facere possimus.'
+'Red eye flight',
+'Phone still glow',
+'World on fire',
+'We move slow',
+'',
+'Boarding call',
+'Backpack light',
+'Mom says pray',
+'Text “goodnight”',
+'',
+'Runway lights',
+'Engines cry',
+'Metal birds',
+'Slice the sky',
+'',
+'They say “serve”',
+'They say “brave”',
+'But my heart’s',
+'Already claimed',
+'',
+'Drone cam live',
+'Green night screen',
+'Crosshair over',
+'Where we’ve been',
+'',
+'Maps go blur',
+'Lines don’t care',
+'Love stays loud',
+'In the air',
+'',
+'I can’t lock',
+'On your street',
+'Can’t press send',
+'On that heat',
+'',
+'No target',
+'When it’s your face',
+'No mission',
+'If love’s the place',
+'',
+'They talk ops',
+'They talk zones',
+'You’re my pulse',
+'In my bones',
+'',
+'Signal lost',
+'Static rain',
+'Head says go',
+'Chest says stay',
+'',
+'Same sky feed',
+'Two side views',
+'Same pale moon',
+'Different news',
+'',
+'If I strike',
+'I lose us',
+'Win the war',
+'Lose my trust',
+'',
+'Low wind hum',
+'City haze',
+'Heartbeat sync',
+'Across the waves',
+'',
+'Step ahead, lose your touch',
+'Step back, they call it soft',
+'',
+'Tell me now…',
+'What’s strong?',
+'',
+'I won’t fly',
+'Where your shadow lives',
+'No badge',
+'Worth what love gives',
+'',
+'Let them stream',
+'Their battle show',
+'I choose you',
+'No target. No.',
+'',
+'Screen goes dark',
+'Still your light',
         ]
       },
       {
-        title: 'Horizon',
+        title: 'The sun (F Mixolydian)',
         lines: [
-          'Omnis voluptas assumenda est omnis,',
-          'dolor repellendus temporibus autem,',
-          'quibusdam aut officiis debitis,',
-          'aut rerum necessitatibus saepe.',
-          '',
-          'Eveniet ut et voluptates repudiandae,',
-          'sint et molestiae non recusandae,',
-          'itaque earum rerum hic tenetur,',
-          'a sapiente delectus ut aut.',
-          '',
-          'Reiciendis voluptatibus maiores alias,',
-          'consequatur aut perferendis.'
+'And the sky becomes a furnace that breathes slowly over oceans and cities and highways where engines hum quietly under the weight of the afternoon while the burning circle above the earth refuses to blink refuses to cool refuses to sleep and the light keeps falling',
+
+'the sun is rising and rising again above the silent stones and the empty roads and the air already tastes like metal and salt and the light begins to press against the skin, pressing slowly at first then harder, harder, until the heat spreads through shoulders through neck through eyelids and the skin starts burning softly like paper close to a candle and the streets begin to glow and the city breathes slowly under the weight of the sky, and the sun keeps climbing and climbing and the light becomes thicker and heavier and the body begins to sweat, first a drop then another then a river sliding down the spine while the air trembles above the asphalt like invisible waves of fire, and the heat keeps rising through concrete through metal through the lungs of the afternoon and the mouth becomes dry and the tongue moves slower and slower while the mind begins to float somewhere between brightness and dizziness and the sun keeps pouring light like molten paint over the roofs and the hills and the distant horizon that starts to blur and melt into white while the eyes half close and the brain becomes quiet and slow and a little dumb under the hammer of the sky, and the skin burns again, warm then hot then sharp like needles of light touching every surface of the body while sweat rolls across the arms and the face and the chest and the shirt sticks to the back and the air smells of dust and salt and hot stone and somewhere deep in the mind appears the simple dream of water, cold water, clear water, deep water where the body could rest for a moment and breathe again and float again and forget the enormous fire turning above the world, and the sun keeps burning burning above the spinning earth and the head begins to turn slowly like a wheel without oil and the streets move a little sideways and the horizon shakes like a mirage and the body walks slower and slower through the afternoon heat while every thought becomes simple, simple like survival, find shade find water breathe slowly move slowly because the sun is louder than logic and brighter than reason and the day becomes a desert made of light, and the heat becomes strange now strange like winter inside fire because the body sweats and sweats until the skin becomes cold under the burning sky and the wind touches the wet shirt and suddenly the heat feels like cold, cold under the sun, cold under the blazing sky while the body shivers slightly and the mind drifts somewhere between exhaustion and dream, and still the sun keeps shining and shining and shining above the silent city and the dead streets and the slow walking people and the trembling air and the burning roofs while the world keeps spinning quietly under the giant star and every living thing remembers the same simple truth again and again and again water shade breath survive while the enormous engine of light continues its endless watch above the earth keep speaking keep speaking keep speaking until the last word fades in the heat',
+
         ]
       },
       {
-        title: 'Waves',
+        title: 'Apocalypse',
         lines: [
-          'Lorem ipsum dolor sit amet,',
-          'consectetur adipiscing elit sed do,',
-          'eiusmod tempor incididunt ut labore,',
-          'et dolore magna aliqua enim.',
-          '',
-          'Ad minim veniam quis nostrud,',
-          'exercitation ullamco laboris nisi,',
-          'ut aliquip ex ea commodo,',
-          'consequat duis aute irure dolor.',
-          '',
-          'In reprehenderit in voluptate velit,',
-          'esse cillum dolore eu fugiat.'
+'It’s getting hot in here, huh?',
+'',
+'Sky turning purple, ocean turning red Got a gold-plated halo hanging over my head CNN saying that it’s over by noon So I’m moonwalking naked on a sand dune Don’t need a savings account, cash out the vault If the planet cracks open, baby, not my fault I got my boots laced up, chrome on the heel Tell the Four Horsemen that I’m taking the wheel.',
+'',
+'Oh, they screaming, they fucking, they running away I’m just fixing my hair, looking cute for the day Meteor crashing, it’s lighting the dark I’m pulling up in a Benz to the Noah’s Ark.',
+'',
+'If we going down, we going down loud Throwing glitter on the grave, dancing in the shroud It’s the final rodeo, baby, let it blow Kiss me while the lava makes the city glow Yeah, we going down, but we look so good Hollywood to hell, misunderstood Whatever happens next, I’ma be the king Let the choir scream, let the last lady sing!',
+'',
+'Devil hit my line, said he saved me a seat I said, \"Hold on, Satan, let me finish the beat\" Angels in the outfield, demons in the back Wearing Louis 5 armor for the final attack I ain’t scared of the end, I’m the main event Time is money, darling, and it’s all been spent So pour the champagne in the holy grail Check the tracking number on the coffin nail.',
+'',
+'Oh, they screaming, they fucking, they running away I’m just fixing my hair, looking cute for the day. Meteor crashing, it’s lighting the dark I’m pulling up in a Benz to the Noah’s Ark.',
+'',
+'If we going down, we going down loud Throwing glitter on the grave, dancing in the shroud It’s the final rodeo, baby, let it blow Kiss me while the lava makes the city glow Yeah, we going down, but we look so good Hollywood to hell, misunderstood Whatever happens next, I’ma be the king Let the choir scream, let the last lady sing!',
+'',
+'No tomorrow (No tomorrow) Just the sorrow (Just the sorrow) But I look fly (So fly) Watch the world die (Bye bye!) (Beat pause) Nas, take ‘em out.',
+'',
+'If we going down, we going down loud Throwing glitter on the grave, dancing in the shroud It’s the final rodeo, baby, let it blow Kiss me while the lava makes the city glow Yeah, we going down, but we look so good Hollywood to hell, misunderstood Whatever happens next, I’ma be the king Let the choir scream, let the last lady sing!',
+'',
+'That’s a wrap, folks.',
         ]
       }
     ];
@@ -589,6 +1002,7 @@
     const nextBtn = document.getElementById('nextBtn');
     const dotsEl = document.getElementById('dots');
     const counterEl = document.getElementById('counter');
+    const pageNumberNav = document.getElementById("pageNumberNav");
 
     function formatNumber(n) {
       return String(n).padStart(2, '0');
@@ -612,7 +1026,7 @@
       const pageNumber = formatNumber(currentPage + 1);
 
       pageEl.innerHTML = `
-        <div class="page-index">${pageNumber}</div>
+
         <h2 class="page-title">${page.title}</h2>
         <div class="page-line"></div>
         <div class="lyrics">
@@ -624,6 +1038,19 @@
       prevBtn.disabled = currentPage === 0;
       nextBtn.disabled = currentPage === pages.length - 1;
       buildDots();
+
+      pageNumberNav.innerHTML = pages.map((_, i) => `
+  <button class="page-number-link ${i === currentPage ? "active" : ""}" data-page="${i}">
+    ${i + 1}
+  </button>
+`).join("");
+
+document.querySelectorAll(".page-number-link").forEach(button => {
+  button.addEventListener("click", () => {
+    currentPage = Number(button.dataset.page);
+    renderPage();
+  });
+});
     }
 
     prevBtn.addEventListener('click', () => {
