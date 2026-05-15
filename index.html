@@ -1,67 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Primary SEO -->
+<title>OliNox - WAVES | Electronic Album Created with Instruments & GenAI</title>
+
+<meta name="title" content="OliNox - WAVES | Electronic Album Created with Instruments & GenAI">
+<meta name="description" content="Listen to WAVES, an electronic music album by OliNox created with instruments, DAWs, mathematics, and generative AI tools.">
+<meta name="keywords" content="OliNox, WAVES, AI music, GenAI music, electronic music, Suno, Ableton Live, DAW, generative AI, audio AI, experimental music">
+<meta name="author" content="OliNox">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://olinox.ai/">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://olinox.ai/">
+<meta property="og:title" content="OliNox - WAVES">
+<meta property="og:description" content="Electronic music album created with instruments, DAWs, mathematics, and generative AI tools.">
+<meta property="og:image" content="https://olinox.ai/assets/og-waves.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://olinox.ai/">
+<meta name="twitter:title" content="OliNox - WAVES">
+<meta name="twitter:description" content="Electronic music album created with instruments, DAWs, mathematics, and generative AI tools.">
+<meta name="twitter:image" content="https://olinox.ai/webalbum.jpg">
+
+<!-- Theme -->
+<meta name="theme-color" content="#050505">
+
+<!-- Mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Structured Data (Music Album) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicAlbum",
+  "name": "WAVES",
+  "url": "https://olinox.ai/",
+  "image": "https://olinox.ai/webalbum.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "OliNox"
+  },
+  "genre": [
+    "Electronic",
+    "Experimental",
+    "AI Music"
+  ],
+  "description": "Electronic music album created with instruments, DAWs, mathematics, and generative AI tools."
+}
+</script>
+
+
+	
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OliNox XP</title>
+	
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>OliNox</title>
+
   <style>
     :root {
-      --bg: #080808;
-      --bg-soft: #0e0e0e;
-      --panel: rgba(255, 255, 255, 0.025);
-      --text: #f0f0ec;
-      --muted: #a8a8a0;
-      --faint: #6f6f68;
-      --line: rgba(238, 238, 228, 0.58);
-      --line-soft: rgba(238, 238, 228, 0.28);
-      --shadow: rgba(0, 0, 0, 0.45);
-      --max: 1180px;
+      --bg: #030305;
+      --line: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(201,205,218,0.58);
+      --soft: rgba(201,205,218,0.34);
+      --accent: #6c63ff;
+      --accent-2: #8b5cf6;
+      --shadow: 0 30px 80px rgba(0,0,0,0.5);
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
       margin: 0;
-      min-height: 100vh;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 35% 10%, rgba(255, 255, 255, 0.055), transparent 34%),
-        radial-gradient(circle at 70% 45%, rgba(255, 255, 255, 0.035), transparent 28%),
+        radial-gradient(circle at 50% 24%, rgba(68,61,255,0.10), transparent 28%),
+        radial-gradient(circle at 10% 50%, rgba(85,0,255,0.06), transparent 18%),
+        radial-gradient(circle at 90% 50%, rgba(50,70,255,0.05), transparent 18%),
         var(--bg);
       color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 82px 82px, 82px 82px;
-      opacity: 0.12;
-      mix-blend-mode: screen;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.16;
-      background-image:
-        repeating-radial-gradient(circle at 20% 20%, rgba(255,255,255,0.22) 0, rgba(255,255,255,0.22) 0.8px, transparent 1.2px, transparent 4px),
-        repeating-linear-gradient(7deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 6px);
-      filter: contrast(130%);
     }
 
     a {
@@ -69,763 +98,358 @@
       text-decoration: none;
     }
 
-    .page-frame {
-      position: relative;
-      width: min(calc(100% - 32px), 1380px);
-      margin: 24px auto;
-      padding: 28px clamp(18px, 4vw, 56px) 36px;
-      border: 1px solid transparent;
-      min-height: calc(100vh - 48px);
-    }
-
-    .page-frame::before,
-    .page-frame::after {
-      content: "";
-      position: absolute;
-      pointer-events: none;
-      inset: 0;
-      border: 1px solid var(--line-soft);
-      clip-path: polygon(0 0, 100% 0, 100% 96%, 96% 100%, 0 100%);
-    }
-
-    .page-frame::after {
-      inset: 3px -2px -2px 2px;
-      opacity: 0.35;
-      border-style: dashed;
-    }
-
-    .site-header {
-      width: min(100%, var(--max));
-      margin: 0 auto;
+    .site {
+      min-height: 100vh;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 64px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
       align-items: center;
-      padding: 2px 0 24px;
-      border-bottom: 1px solid var(--line-soft);
-      position: relative;
-      z-index: 1;
+      justify-content: space-between;
+      padding: 0 28px;
+      background: rgba(3,3,5,0.6);
+      backdrop-filter: blur(6px);
     }
 
-    .logo {
-      font-family: "Courier New", ui-monospace, SFMono-Regular, Menlo, monospace;
-      letter-spacing: 0.22em;
-      font-size: 1.05rem;
-      color: var(--text);
-    }
-
-    .nav {
+    .brand {
       display: flex;
-      gap: clamp(18px, 3vw, 42px);
-      color: var(--muted);
-      font-family: "Courier New", ui-monospace, monospace;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: white;
+    }
+
+    .brand-icon {
+      color: white;
       font-size: 0.9rem;
     }
 
     .nav a {
-      position: relative;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.9rem;
+	   
+      gap: 25px;
+  color: var(--soft);
+      letter-spacing: 0.04em;
     }
 
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -8px;
-      height: 1px;
-      background: var(--line);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 180ms ease;
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 32px;
     }
 
-    .nav a:hover::after {
-      transform: scaleX(1);
-    }
-
-    .layout {
-      width: min(100%, var(--max));
-      margin: 52px auto 0;
+    .content {
+      width: 100%;
+      max-width: 1080px;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
-      gap: clamp(34px, 6vw, 78px);
-      position: relative;
-      z-index: 1;
+      grid-template-columns: 420px 1fr;
+      gap: 88px;
+      align-items: start;
     }
 
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(3rem, 7vw, 5.95rem);
-      line-height: 0.98;
-      letter-spacing: -0.06em;
-      max-width: 700px;
-      text-wrap: balance;
-      text-shadow: 0 1px 0 rgba(255,255,255,0.24), 0 20px 40px rgba(0,0,0,0.5);
+    .album-panel img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
     }
 
-    .sketch-underline {
-      width: min(520px, 84%);
-      height: 11px;
-      margin: 18px 0 20px;
-      background:
-        linear-gradient(178deg, transparent 30%, rgba(238,238,228,0.75) 42%, transparent 64%),
-        linear-gradient(182deg, transparent 36%, rgba(238,238,228,0.43) 49%, transparent 58%);
-      filter: blur(0.15px);
-    }
-
-    .hero p {
-      margin: 0;
-      max-width: 560px;
-      color: var(--muted);
-      font-family: "Courier New", ui-monospace, monospace;
-      font-size: clamp(1rem, 1.35vw, 1.2rem);
-    }
-
-    .actions {
+    .album-info {
       margin-top: 28px;
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 54px;
-      padding: 0 22px;
-      color: var(--text);
-      border: 1px solid var(--line-soft);
-      font-family: "Courier New", ui-monospace, monospace;
-      background: rgba(255,255,255,0.018);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
-      position: relative;
-      transition: background 180ms ease, transform 180ms ease;
+    .album-title {
+      font-size: clamp(42px, 5vw, 60px);
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      line-height: 0.95;
+      padding-left: 0.22em;
     }
 
-    .btn:hover {
-      background: rgba(255,255,255,0.06);
-      transform: translateY(-1px);
-    }
-
-    .icon-wave {
-      width: 25px;
-      height: 16px;
-      background:
-        linear-gradient(90deg, transparent 0 12%, var(--text) 12% 16%, transparent 16% 24%, var(--text) 24% 28%, transparent 28% 38%, var(--text) 38% 42%, transparent 42% 54%, var(--text) 54% 58%, transparent 58% 70%, var(--text) 70% 74%, transparent 74% 100%);
-      opacity: 0.8;
-    }
-
-    .icon-play {
-      width: 0;
-      height: 0;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-left: 12px solid var(--text);
-      opacity: 0.8;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 310px;
-      padding-top: 24px;
-    }
-
-    .wave-panel {
-      position: relative;
-      height: 220px;
-      border-left: 1px solid rgba(238,238,228,0.08);
-      border-right: 1px solid rgba(238,238,228,0.08);
-    }
-
-    .wave {
-      position: absolute;
-      left: 5%;
-      right: 2%;
-      top: 50%;
-      height: 96px;
-      transform: translateY(-50%);
-      opacity: 0.74;
-      background:
-        repeating-linear-gradient(90deg,
-          transparent 0 5px,
-          rgba(238,238,228,0.2) 5px 6px,
-          transparent 6px 11px),
-        linear-gradient(180deg,
-          transparent 0 20%,
-          rgba(238,238,228,0.14) 20% 30%,
-          transparent 30% 43%,
-          rgba(238,238,228,0.84) 48% 52%,
-          transparent 57% 70%,
-          rgba(238,238,228,0.12) 70% 80%,
-          transparent 80% 100%);
-      clip-path: polygon(
-        0 48%, 3% 45%, 5% 54%, 7% 40%, 9% 61%, 11% 34%, 13% 66%,
-        15% 21%, 17% 82%, 19% 10%, 21% 88%, 23% 18%, 25% 74%,
-        27% 38%, 29% 63%, 31% 31%, 33% 68%, 35% 42%, 37% 60%,
-        39% 47%, 41% 51%, 43% 46%, 45% 54%, 47% 43%, 49% 58%,
-        51% 44%, 53% 55%, 55% 39%, 57% 63%, 59% 30%, 61% 73%,
-        63% 24%, 65% 79%, 67% 32%, 69% 66%, 71% 40%, 73% 59%,
-        75% 46%, 77% 53%, 79% 48%, 81% 51%, 83% 49%, 86% 50%,
-        90% 49%, 94% 51%, 100% 50%, 100% 50%, 94% 49%, 90% 51%,
-        86% 50%, 83% 51%, 81% 49%, 79% 52%, 77% 47%, 75% 54%,
-        73% 41%, 71% 60%, 69% 34%, 67% 68%, 65% 21%, 63% 76%,
-        61% 27%, 59% 70%, 57% 37%, 55% 61%, 53% 45%, 51% 56%,
-        49% 42%, 47% 57%, 45% 46%, 43% 54%, 41% 49%, 39% 53%,
-        37% 40%, 35% 58%, 33% 32%, 31% 69%, 29% 37%, 27% 62%,
-        25% 26%, 23% 82%, 21% 12%, 19% 90%, 17% 18%, 15% 79%,
-        13% 33%, 11% 65%, 9% 39%, 7% 60%, 5% 45%, 3% 55%, 0 52%
-      );
-    }
-
-    .wave-axis {
-      position: absolute;
-      left: 3%;
-      right: 2%;
-      top: 50%;
-      height: 1px;
-      background: var(--line-soft);
-      opacity: 0.8;
-    }
-
-    .guide {
-      position: absolute;
-      inset: 32px 17% 35px 18%;
-      border: 1px dashed rgba(238,238,228,0.24);
-    }
-
-    .scribble {
-      position: absolute;
-      color: var(--faint);
-      font-family: "Comic Sans MS", "Bradley Hand", cursive;
-      font-style: italic;
+    .artist-name {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--muted);
       font-size: 0.95rem;
-      transform: rotate(-5deg);
-      opacity: 0.9;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
     }
 
-    .scribble.transient { top: 0; left: 30%; }
-    .scribble.air { top: 38px; right: 0; }
-    .scribble.body { bottom: 10px; left: 44%; }
-    .scribble.hz { bottom: 15px; right: 14%; }
-
-    .audio-strip {
-      margin-top: 22px;
-      min-height: 56px;
-      border: 1px solid var(--line-soft);
-      display: grid;
-      grid-template-columns: 36px 54px 1fr 54px 24px;
-      align-items: center;
-      gap: 12px;
-      padding: 0 16px;
-      font-family: "Courier New", ui-monospace, monospace;
-      color: var(--muted);
-      background: rgba(255,255,255,0.016);
-    }
-
-    .tiny-wave {
-      height: 16px;
-      opacity: 0.55;
-      background:
-        linear-gradient(90deg, transparent, rgba(238,238,228,0.4), transparent),
-        repeating-linear-gradient(90deg, transparent 0 7px, rgba(238,238,228,0.45) 7px 8px, transparent 8px 13px);
-      clip-path: polygon(0 50%, 5% 44%, 10% 55%, 15% 43%, 20% 59%, 25% 47%, 30% 52%, 35% 40%, 40% 62%, 45% 49%, 50% 51%, 55% 44%, 60% 58%, 65% 48%, 70% 55%, 75% 45%, 80% 57%, 85% 49%, 90% 52%, 95% 48%, 100% 50%, 100% 51%, 95% 52%, 90% 48%, 85% 51%, 80% 43%, 75% 55%, 70% 45%, 65% 52%, 60% 42%, 55% 56%, 50% 49%, 45% 51%, 40% 38%, 35% 60%, 30% 48%, 25% 53%, 20% 41%, 15% 57%, 10% 45%, 5% 56%, 0 50%);
-    }
-
-    .experiments {
-      width: min(100%, var(--max));
-      margin: 38px auto 0;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px 24px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .card {
-      min-height: 190px;
-      position: relative;
-      padding: 22px 24px;
-      border: 1px solid var(--line-soft);
-      background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
-      box-shadow: 0 18px 50px var(--shadow);
-      overflow: hidden;
-    }
-
-    .card::before,
-    .btn::before,
-    .audio-strip::before {
-      content: "";
-      position: absolute;
-      inset: 2px -1px -2px 1px;
-      border: 1px solid rgba(238,238,228,0.16);
-      pointer-events: none;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(238,238,228,0.22), transparent);
-    }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .xp-id,
-    .tag,
-    .status,
-    .footer-line,
-    .version-box {
-      font-family: "Courier New", ui-monospace, monospace;
-    }
-
-    .xp-id {
-      color: var(--muted);
+    .meta {
+      margin-top: 18px;
+      color: var(--soft);
+      font-size: 0.9rem;
       letter-spacing: 0.08em;
     }
 
-    .tag {
-      color: var(--muted);
-      border: 1px solid var(--line-soft);
-      padding: 3px 9px;
-      font-size: 0.82rem;
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      color: var(--soft);
+      margin-bottom: 34px;
     }
 
-    .card h2 {
-      margin: 0 0 10px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      font-size: clamp(1.25rem, 2vw, 1.55rem);
+    .tracklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    .card p {
-      margin: 0;
-      max-width: 390px;
-      color: var(--muted);
-      font-family: "Courier New", ui-monospace, monospace;
+    .track {
+      display: grid;
+      grid-template-columns: 42px 1fr 54px 40px;
+      align-items: center;
+      gap: 16px;
+      min-height: 42px;
+    }
+
+    .track-number {
+      color: #8490ff;
       font-size: 0.95rem;
-      line-height: 1.5;
+      letter-spacing: 0.12em;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
     }
 
-    .status {
-      margin-top: 18px;
+    .track-name {
+      color: rgba(255,255,255,0.88);
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .track-duration {
+      color: var(--muted);
+      text-align: right;
+      font-size: 0.88rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .play-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      color: var(--muted);
-      font-size: 0.92rem;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    .status::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
+    .play-btn:hover {
+      transform: scale(1.06);
+      border-color: rgba(132,144,255,0.7);
+      background: rgba(132,144,255,0.08);
     }
 
-    .card-sketch {
-      position: absolute;
-      right: 24px;
-      bottom: 24px;
-      width: 156px;
-      height: 58px;
-      opacity: 0.5;
+    .play-btn svg {
+      width: 13px;
+      height: 13px;
+      fill: rgba(255,255,255,0.86);
+      margin-left: 1px;
     }
 
-    .eq-sketch {
-      background:
-        radial-gradient(circle at 20% 70%, var(--line) 0 3px, transparent 4px),
-        radial-gradient(circle at 45% 45%, var(--line) 0 3px, transparent 4px),
-        radial-gradient(circle at 62% 24%, var(--line) 0 3px, transparent 4px),
-        radial-gradient(circle at 86% 34%, var(--line) 0 2px, transparent 3px),
-        linear-gradient(155deg, transparent 7%, transparent 18%, var(--line) 19%, transparent 20%),
-        linear-gradient(135deg, transparent 20%, var(--line) 21%, transparent 22%),
-        linear-gradient(115deg, transparent 42%, var(--line) 43%, transparent 44%);
-      border-bottom: 1px solid var(--line-soft);
+    .play-btn.playing {
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+      border-color: transparent;
     }
 
-    .grid-sketch {
-      background-image:
-        linear-gradient(var(--line-soft) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line-soft) 1px, transparent 1px),
-        linear-gradient(45deg, transparent 0 48%, rgba(238,238,228,0.62) 48% 52%, transparent 52% 100%);
-      background-size: 18px 18px, 18px 18px, 36px 36px;
-      border: 1px solid var(--line-soft);
+    .track.active .track-name {
+      color: #ffffff;
     }
 
-    .chain-sketch,
-    .master-sketch {
-      background:
-        repeating-linear-gradient(90deg, transparent 0 13px, var(--line-soft) 13px 14px, transparent 14px 27px),
-        linear-gradient(160deg, transparent 0 15%, var(--line) 16%, transparent 17% 30%, var(--line) 31%, transparent 33% 48%, var(--line) 49%, transparent 51% 67%, var(--line) 68%, transparent 70% 100%);
-      border-left: 1px dashed var(--line-soft);
-      border-right: 1px dashed var(--line-soft);
-    }
-
-    .master-sketch {
-      opacity: 0.65;
-      background:
-        repeating-linear-gradient(90deg, transparent 0 4px, rgba(238,238,228,0.35) 4px 5px, transparent 5px 9px),
-        repeating-linear-gradient(173deg, transparent 0 8px, rgba(238,238,228,0.28) 8px 10px, transparent 10px 16px);
-      border: 1px solid var(--line-soft);
-    }
-
-    .margin-note {
-      position: absolute;
-      color: var(--faint);
-      font-family: "Comic Sans MS", "Bradley Hand", cursive;
-      font-style: italic;
-      z-index: 1;
-      opacity: 0.75;
-      display: none;
-    }
-
-    .note-left {
-      left: 28px;
-      top: 170px;
-    }
-
-    .note-lower-left {
-      left: 30px;
-      bottom: 300px;
-      transform: rotate(-8deg);
-    }
-
-    .note-right {
-      right: 30px;
-      top: 52%;
-      transform: rotate(-8deg);
-    }
-
-    .level-meter {
-      position: absolute;
-      left: 46px;
-      top: 205px;
-      width: 38px;
-      height: 278px;
-      z-index: 1;
-      opacity: 0.5;
-      display: none;
-    }
-
-    .level-meter::before {
-      content: "0\A-6\A-12\A-18\A-24\A-36\A-48\A-inf";
-      white-space: pre;
-      color: var(--faint);
-      font-family: "Courier New", ui-monospace, monospace;
-      font-size: 0.65rem;
-      line-height: 2.35;
-    }
-
-    .level-meter::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      right: 0;
-      width: 8px;
-      height: 255px;
-      border: 1px solid var(--line-soft);
-      background: repeating-linear-gradient(180deg, rgba(238,238,228,0.32) 0 3px, transparent 3px 8px);
+    .track.active .track-number,
+    .track.active .track-duration {
+      color: #d8d3ff;
     }
 
     .footer {
-      width: min(100%, var(--max));
-      margin: 26px auto 0;
-      padding-top: 28px;
-      border-top: 1px solid var(--line-soft);
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 24px;
+      border-top: 1px solid var(--line);
+      min-height: 52px;
+      display: flex;
       align-items: center;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
+      justify-content: space-between;
+      padding: 0 24px;
+      color: rgba(201,205,218,0.6);
+      font-size: 0.8rem;
+      background: rgba(3,3,5,0.6);
     }
 
-    .quote {
-      font-family: "Courier New", ui-monospace, monospace;
-      max-width: 360px;
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
     }
 
-    .quote::before,
-    .quote::after {
-      color: var(--line);
-      font-size: 2rem;
-      line-height: 0;
-      vertical-align: -0.35em;
+    .nav a:hover,
+    .footer-links a:hover {
+      color: white;
     }
 
-    .quote::before { content: "“ "; }
-    .quote::after { content: " ”"; }
-
-    .crosshair {
-      width: 150px;
-      height: 45px;
-      background:
-        linear-gradient(90deg, transparent 0, transparent 49%, var(--line-soft) 50%, transparent 51%, transparent 100%),
-        linear-gradient(180deg, transparent 0, transparent 49%, var(--line-soft) 50%, transparent 51%, transparent 100%);
-      position: relative;
-    }
-
-    .crosshair::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 10px;
-      height: 10px;
-      border: 1px solid var(--line-soft);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .footer-line {
-      justify-self: end;
-      font-style: italic;
-      color: var(--faint);
-    }
-
-    .knob {
-      position: absolute;
-      right: 48px;
-      bottom: 210px;
-      width: 86px;
-      height: 86px;
-      opacity: 0.55;
-      display: none;
-    }
-
-    .knob::before {
-      content: "";
-      position: absolute;
-      inset: 16px;
-      border: 1px solid var(--line-soft);
-      border-radius: 50%;
-      background: radial-gradient(circle, transparent 0 48%, rgba(238,238,228,0.18) 49% 52%, transparent 53%);
-    }
-
-    .knob::after {
-      content: "drive";
-      position: absolute;
-      left: 24px;
-      bottom: -10px;
-      color: var(--faint);
-      font-family: "Comic Sans MS", "Bradley Hand", cursive;
-      font-style: italic;
-    }
-
-    .version-box {
-      position: absolute;
-      right: 32px;
-      bottom: 26px;
-      border: 1px solid var(--line-soft);
-      color: var(--faint);
-      padding: 8px 12px;
-      font-size: 0.72rem;
-      display: none;
-    }
-
-    @media (min-width: 1260px) {
-      .margin-note,
-      .level-meter,
-      .knob,
-      .version-box {
-        display: block;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .site-header {
-        align-items: flex-start;
-        gap: 18px;
-        flex-direction: column;
-      }
-
-      .nav {
-        flex-wrap: wrap;
-        gap: 14px 24px;
-      }
-
-      .layout {
+    @media (max-width: 1050px) {
+      .content {
         grid-template-columns: 1fr;
-        margin-top: 42px;
+        max-width: 520px;
+        gap: 56px;
       }
 
-      .hero-visual {
-        min-height: 260px;
+      .main {
+        padding: 54px 22px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .topbar {
+        height: 58px;
+        padding: 0 18px;
       }
 
-      .experiments {
-        grid-template-columns: 1fr;
+      .brand {
+        font-size: 1rem;
+      }
+
+      .album-title {
+        font-size: 2.4rem;
+      }
+
+      .track {
+        grid-template-columns: 34px 1fr 46px 34px;
+        gap: 10px;
       }
 
       .footer {
-        grid-template-columns: 1fr;
+        padding: 0 18px;
       }
 
-      .crosshair {
-        display: none;
-      }
-
-      .footer-line {
-        justify-self: start;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .page-frame {
-        width: min(calc(100% - 16px), 1380px);
-        margin: 8px auto;
-        padding: 22px 14px 28px;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.7rem, 17vw, 4rem);
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        justify-content: center;
-      }
-
-      .audio-strip {
-        grid-template-columns: 28px 42px 1fr 42px;
-      }
-
-      .audio-strip span:last-child {
-        display: none;
-      }
-
-      .card {
-        padding: 20px;
-      }
-
-      .card-sketch {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        margin-top: 18px;
-        width: 100%;
+      .footer-links {
+        gap: 14px;
       }
     }
   </style>
 </head>
-<body>
-  <div class="page-frame">
-    <div class="margin-note note-left">gain<br>-6.2 dB</div>
-    <div class="level-meter"></div>
-    <div class="margin-note note-lower-left">listen<br>twice.<br>trust<br>later.</div>
-    <div class="margin-note note-right">perfect<br>is boring.</div>
-    <div class="knob"></div>
-    <div class="version-box">v1.0<br>build notes →</div>
 
-    <header class="site-header">
-      <a class="logo" href="#">OliNox XP</a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#experiments">Experiments</a>
-        <a href="#vst">VST Tests</a>
-        <a href="#racks">Ableton Racks</a>
-        <a href="#notes">Notes</a>
+<body>
+  <div class="site">
+    <header class="topbar">
+      <a href="#" class="brand">
+        <span class="brand-icon">♪</span>
+        <span>OliNox</span>
+      </a>
+
+      <nav class="nav">
+
+        <a href="http://blog.olinox.ai/">AI × Sound experiments</a>
       </nav>
     </header>
 
-    <main>
-      <section class="layout" aria-labelledby="hero-title">
-        <div class="hero">
-          <h1 id="hero-title">Sound experiments, plugin notes, and unfinished ideas.</h1>
-          <div class="sketch-underline" aria-hidden="true"></div>
-          <p>A small lab for VST tests, Ableton racks, AI music workflows, and sonic accidents.</p>
-          <div class="actions">
-            <a class="btn" href="#experiments"><span class="icon-wave" aria-hidden="true"></span>Explore experiments</a>
-            <a class="btn" href="#listen"><span class="icon-play" aria-hidden="true"></span>Listen to tests</a>
+    <main class="main">
+      <section class="content">
+        <div class="album-panel">
+          <img src="webalbum.jpg" alt="Waves album cover">
+
+          <div class="album-info">
+ 
+            <div class="meta">2026 • 12 tracks • 52 min • <a href="lyrics.html" target="_blank">Lyrics</a> </div>
+
           </div>
         </div>
 
-        <div class="hero-visual" id="listen" aria-label="Audio experiment preview">
-          <div class="wave-panel">
-            <div class="guide" aria-hidden="true"></div>
-            <div class="wave-axis" aria-hidden="true"></div>
-            <div class="wave" aria-hidden="true"></div>
-            <div class="scribble transient">transient ↓</div>
-            <div class="scribble air">air ↗</div>
-            <div class="scribble body">body</div>
-            <div class="scribble hz">~120 Hz</div>
-          </div>
+        <div class="tracklist-panel">
+          <h2 class="section-title">TRACKLIST</h2>
 
-          <div class="audio-strip">
-            <span class="icon-play" aria-hidden="true"></span>
-            <span>0:00</span>
-            <span class="tiny-wave" aria-hidden="true"></span>
-            <span>0:24</span>
-            <span>⋮</span>
-          </div>
+          <ul class="tracklist">
+            <li class="track" data-src="W01 - Waves.mp3"><div class="track-number">01</div><div class="track-name">Waves</div><div class="track-duration">3:47</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W02 - Poison.mp3"><div class="track-number">02</div><div class="track-name">Poison</div><div class="track-duration">4:17</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W03 - Dance like this.mp3"><div class="track-number">03</div><div class="track-name">Dance like this</div><div class="track-duration">3:26</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W04 - Corporate.mp3"><div class="track-number">04</div><div class="track-name">Corporate</div><div class="track-duration">6:28</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W05 - Another Day.mp3"><div class="track-number">05</div><div class="track-name">Another Day</div><div class="track-duration">4:28</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W06 - This is the end of the world.mp3"><div class="track-number">06</div><div class="track-name">This is the end of the world</div><div class="track-duration">4:20</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W07 - My body cracks.mp3"><div class="track-number">07</div><div class="track-name">My body cracks</div><div class="track-duration">4:58</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W08 - The Boy and The Hope.mp3"><div class="track-number">08</div><div class="track-name">The boy and The Hope</div><div class="track-duration">4:26</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W09 - A bad friend.mp3"><div class="track-number">09</div><div class="track-name">A bad friend</div><div class="track-duration">3:02</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W10 - In love with the enemy.mp3"><div class="track-number">10</div><div class="track-name">In love with the ennemy</div><div class="track-duration">3:57</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W11 - The sun.mp3"><div class="track-number">11</div><div class="track-name">The sun</div><div class="track-duration">4:19</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+            <li class="track" data-src="W12 - Apocalypse.mp3"><div class="track-number">12</div><div class="track-name">Apocalypse</div><div class="track-duration">3:31</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
+          </ul>
         </div>
-      </section>
-
-      <section class="experiments" id="experiments" aria-label="Experiment cards">
-        <article class="card">
-          <div class="card-top">
-            <span class="xp-id">XP-001</span>
-            <span class="tag">Ableton / EQ</span>
-          </div>
-          <h2>Metallic Vocal Fix</h2>
-          <p>Testing dynamic EQ chains to soften synthetic highs in AI vocals.</p>
-          <span class="status">tested</span>
-          <div class="card-sketch eq-sketch" aria-hidden="true"></div>
-        </article>
-
-        <article class="card" id="racks">
-          <div class="card-top">
-            <span class="xp-id">XP-002</span>
-            <span class="tag">Ableton Rack</span>
-          </div>
-          <h2>Drum Rack Replacement</h2>
-          <p>Rebuilding the rhythmic core of a generated track.</p>
-          <span class="status">in progress - - - - -</span>
-          <div class="card-sketch grid-sketch" aria-hidden="true"></div>
-        </article>
-
-        <article class="card" id="vst">
-          <div class="card-top">
-            <span class="xp-id">XP-003</span>
-            <span class="tag">VST</span>
-          </div>
-          <h2>VST Chain Test 01</h2>
-          <p>Comparing saturation, compression, and limiting on vocals.</p>
-          <span class="status">tested</span>
-          <div class="card-sketch chain-sketch" aria-hidden="true"></div>
-        </article>
-
-        <article class="card">
-          <div class="card-top">
-            <span class="xp-id">XP-004</span>
-            <span class="tag">Mastering</span>
-          </div>
-          <h2>Failed Master</h2>
-          <p>Too loud, too bright, and somehow interesting.</p>
-          <span class="status">failed</span>
-          <div class="card-sketch master-sketch" aria-hidden="true"></div>
-        </article>
       </section>
     </main>
 
-    <footer class="footer" id="notes">
-      <div class="quote">The best sounds are often the ones you didn’t plan.</div>
-      <div class="crosshair" aria-hidden="true"></div>
-      <div class="footer-line">capture → test → reflect → repeat</div>
+    <footer class="footer">
+      <div>© 2026</div>
+      <div class="footer-links">
+        <a href="https://open.spotify.com/album/5oUDbiSjtouwTwRmbjfarG">SPOTIFY</a>
+        <a href="https://music.apple.com/us/album/waves/1888744238">APPLE MUSIC</a>
+      </div>
     </footer>
   </div>
+
+  <script>
+    const audio = new Audio();
+    let currentButton = null;
+    let currentTrack = null;
+
+    const playIcon = `<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>`;
+    const pauseIcon = `<svg viewBox="0 0 24 24"><path d="M7 5h4v14H7zm6 0h4v14h-4z"></path></svg>`;
+
+    function resetAllButtons() {
+      document.querySelectorAll(".play-btn").forEach(btn => {
+        btn.classList.remove("playing");
+        btn.innerHTML = playIcon;
+      });
+
+      document.querySelectorAll(".track").forEach(track => {
+        track.classList.remove("active");
+      });
+    }
+
+    document.querySelectorAll(".play-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const track = button.closest(".track");
+        const src = track.dataset.src;
+
+        if (currentButton === button && !audio.paused) {
+          audio.pause();
+          button.classList.remove("playing");
+          button.innerHTML = playIcon;
+          track.classList.remove("active");
+          return;
+        }
+
+        resetAllButtons();
+
+        currentButton = button;
+        currentTrack = track;
+
+        audio.src = src;
+        audio.play().catch(() => {
+          alert("Could not play the audio file. Check the MP3 path.");
+        });
+
+        button.classList.add("playing");
+        button.innerHTML = pauseIcon;
+        track.classList.add("active");
+      });
+    });
+
+    audio.addEventListener("ended", () => {
+      resetAllButtons();
+      currentButton = null;
+      currentTrack = null;
+    });
+  </script>
 </body>
 </html>
