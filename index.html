@@ -104,6 +104,14 @@
       flex-direction: column;
     }
 
+	.album-note {
+	  margin: 0 0 34px;
+	  font-size: 13px;
+	  line-height: 1.7;
+	  letter-spacing: 0.05em;
+	  margin-bottom: 14px;
+	}
+	
     .topbar {
       height: 64px;
       border-bottom: 1px solid var(--line);
@@ -132,9 +140,8 @@
     .nav a {
       color: rgba(255,255,255,0.72);
       font-size: 0.9rem;
-	   
       gap: 25px;
-  color: var(--soft);
+      color: var(--soft);
       letter-spacing: 0.04em;
     }
 
@@ -196,7 +203,7 @@
       font-weight: 400;
       letter-spacing: 0.34em;
       color: var(--soft);
-      margin-bottom: 34px;
+      margin-bottom: 8px;
     }
 
     .tracklist {
@@ -248,19 +255,34 @@
       transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
+	.play-btn.active {
+	  border-color: rgba(159,140,255,0.55);
+	  background: rgba(159,140,255,0.12);
+	  box-shadow:
+		0 0 24px rgba(159,140,255,0.18);
+	}
+
     .play-btn:hover {
-      transform: scale(1.06);
-      border-color: rgba(132,144,255,0.7);
-      background: rgba(132,144,255,0.08);
-    }
+	  transform: scale(1.06);
+	  border-color: rgba(159,140,255,0.45);
+	  background: rgba(159,140,255,0.08);
+	  box-shadow:
+ 	  0 0 18px rgba(159,140,255,0.12);
+	}
 
     .play-btn svg {
-      width: 13px;
-      height: 13px;
-      fill: rgba(255,255,255,0.86);
-      margin-left: 1px;
+	  width: 15px;
+      height: 15px;
+	  fill: rgba(255,255,255,0.78);
+      transition:
+		fill 0.25s ease,
+		transform 0.25s ease;
     }
 
+	.play-btn:hover svg {
+	  fill: #c9bcff;
+	}
+	
     .play-btn.playing {
       background: linear-gradient(90deg, var(--accent-2), var(--accent));
       border-color: transparent;
@@ -337,23 +359,55 @@
       .footer-links {
         gap: 14px;
       }
+
+      .brand-block {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 2px;
+	}
+
+	.tagline {
+	  margin-left: 24px;
+	  font-size: 11px;
+	  letter-spacing: 0.18em;
+	  text-transform: uppercase;
+	  color: rgba(255,255,255,0.38);
+	}
+
+	.nav a {
+	  font-size: 12px;
+	  letter-spacing: 0.12em;
+	  text-transform: uppercase;
+	  color: rgba(255,255,255,0.55);
+	  transition: color 0.25s ease;
+	}
+
+	.nav a:hover {
+	  color: #9f8cff;
+	}
+
     }
   </style>
 </head>
 
 <body>
   <div class="site">
-    <header class="topbar">
-      <a href="#" class="brand">
-        <span class="brand-icon">♪</span>
-        <span>OliNox</span>
-      </a>
+<header class="topbar">
+  <div class="brand-block">
+    <a href="#" class="brand">
+      <span class="brand-icon">♪</span>
+      <span>OliNox</span>
+    </a>
 
-      <nav class="nav">
+    <div class="tagline">
+      AI × Sound Experiments
+    </div>
+  </div>
 
-        <a href="http://blog.olinox.ai/">AI × Sound experiments</a>
-      </nav>
-    </header>
+  <nav class="nav">
+    <a href="https://blog.olinox.ai/">Experiments</a>
+  </nav>
+</header>
 
     <main class="main">
       <section class="content">
@@ -363,12 +417,13 @@
           <div class="album-info">
  
             <div class="meta">2026 • 12 tracks • 52 min • <a href="lyrics.html" target="_blank">Lyrics</a> </div>
-
+            <div class="meta">Indie electronic music created with instruments and generative AI tools.</div>
           </div>
         </div>
 
         <div class="tracklist-panel">
           <h2 class="section-title">TRACKLIST</h2>
+		 
 
           <ul class="tracklist">
             <li class="track" data-src="W01 - Waves.mp3"><div class="track-number">01</div><div class="track-name">Waves</div><div class="track-duration">3:47</div><button class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></button></li>
@@ -391,8 +446,10 @@
     <footer class="footer">
       <div>© 2026</div>
       <div class="footer-links">
-        <a href="https://open.spotify.com/album/5oUDbiSjtouwTwRmbjfarG">SPOTIFY</a>
-        <a href="https://music.apple.com/us/album/waves/1888744238">APPLE MUSIC</a>
+        <a href="https://open.spotify.com/album/5oUDbiSjtouwTwRmbjfarG">SPOTIFY</a> . 
+        <a href="https://www.deezer.com/fr/album/948747931">DEEZER</a> . 
+        <a href="https://music.apple.com/us/album/waves/1888744238">APPLE MUSIC</a> . 
+        <a href="https://blog.olinox.ai">BLOG</a>
       </div>
     </footer>
   </div>
