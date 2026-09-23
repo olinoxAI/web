@@ -361,6 +361,27 @@
       padding-bottom: 80px;
     }
 
+
+    @media (max-width: 600px) {
+      .page-number-nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 36px);
+        justify-content: center;
+        gap: 8px 10px;
+        margin: 2px 0 8px;
+      }
+
+      .page-number-link {
+        width: 36px;
+        height: 32px;
+        padding: 0;
+        font-size: 13px;
+        letter-spacing: 0;
+        text-align: center;
+      }
+    }
+
   </style>
 </head>
 <body>
