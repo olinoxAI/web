@@ -1,0 +1,713 @@
+{
+  "_editor_note": "IMPORTANT: Only track 5 story expresses a user-supplied concept. All AI percentages, models, credits and sample lyrics marked demo=true are fictional layout examples. Other fields are drafting prompts. Do not publish invented details as fact.",
+  "album": {
+    "name": "WAVES",
+    "artist": "OliNox",
+    "year": 2026
+  },
+  "mastering": {
+    "description": "Final mix and mastering for a coherent sound across the album. Replace this generic description with your actual chain and listening checks.",
+    "steps": [
+      "EQ",
+      "Compression",
+      "Saturation",
+      "Stereo imaging",
+      "Limiter"
+    ]
+  },
+  "tracks": [
+    {
+      "id": 1,
+      "title": "Waves",
+      "duration": "3:47",
+      "audio": "W01 - Waves.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Poison",
+      "duration": "4:17",
+      "audio": "W02 - Poison.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Dance like this",
+      "duration": "3:26",
+      "audio": "W03 - Dance like this.mp3",
+      "demo": true,
+      "lyrics": [
+        {
+          "label": "[Verse 1]",
+          "lines": [
+            "Example lyric line one",
+            "Example lyric line two",
+            "Example lyric line three",
+            "Example lyric line four"
+          ]
+        },
+        {
+          "label": "[Chorus]",
+          "lines": [
+            "Example chorus one",
+            "Example chorus two"
+          ]
+        },
+        {
+          "label": "[Verse 2]",
+          "lines": [
+            "Example second verse one",
+            "Example second verse two"
+          ]
+        }
+      ],
+      "story": {
+        "lead": "Example only: describe the feeling that gave you the idea for this song.",
+        "context": "Replace this sample content with the actual concept for “Dance like this”."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Corporate",
+      "duration": "6:28",
+      "audio": "W04 - Corporate.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Another Day",
+      "duration": "4:28",
+      "audio": "W05 - Another Day.mp3",
+      "demo": true,
+      "lyrics": [
+        {
+          "label": "[Verse 1]",
+          "lines": [
+            "Sample lyrics for layout preview.",
+            "Replace these lines with your original words."
+          ]
+        },
+        {
+          "label": "[Chorus]",
+          "lines": [
+            "Another day",
+            "Tomorrow is another day"
+          ]
+        }
+      ],
+      "story": {
+        "lead": "After a traumatic experience, sometimes all you can do is try to forget what happened and wait for another day.",
+        "context": "The song is about getting through the present moment when there is nothing left to solve tonight. Tomorrow is simply another day."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": 30,
+          "model": "Claude 4 (example only)"
+        },
+        "melody": {
+          "percent": 80,
+          "model": "Suno v5.5 (example only)"
+        },
+        "vocals": {
+          "percent": 90,
+          "model": "Suno v5.5 (example only)"
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Draft, review and final selection",
+          "tools": [
+            "Claude 4 (example)"
+          ]
+        },
+        {
+          "name": "Drums",
+          "method": "Generate, select and edit rhythm",
+          "tools": [
+            "Suno v5.5 (example)"
+          ]
+        },
+        {
+          "name": "Bass",
+          "method": "Synth layers, EQ and arrangement",
+          "tools": [
+            "Arturia Mini V (example)"
+          ]
+        },
+        {
+          "name": "Piano",
+          "method": "Performance, edits and arrangement",
+          "tools": [
+            "Ableton Live (example)"
+          ]
+        },
+        {
+          "name": "Synths",
+          "method": "Sound design, layering and automation",
+          "tools": [
+            "Suno v5.5",
+            "Ableton Rack (examples)"
+          ]
+        },
+        {
+          "name": "Vocals",
+          "method": "Select takes, process and mix",
+          "tools": [
+            "Suno v5.5 (example)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "This is the end of the world",
+      "duration": "4:20",
+      "audio": "W06 - This is the end of the world.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "My body cracks",
+      "duration": "4:58",
+      "audio": "W07 - My body cracks.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "The boy and The Hope",
+      "duration": "4:26",
+      "audio": "W08 - The Boy and The Hope.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "A bad friend",
+      "duration": "3:02",
+      "audio": "W09 - A bad friend.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "In love with the enemy",
+      "duration": "3:57",
+      "audio": "W10 - In love with the enemy.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "The sun",
+      "duration": "4:19",
+      "audio": "W11 - The sun.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Apocalypse",
+      "duration": "3:31",
+      "audio": "W12 - Apocalypse.mp3",
+      "demo": false,
+      "lyrics": [],
+      "story": {
+        "lead": "Write the personal idea behind this song here — what happened or inspired it, and what the song expresses.",
+        "context": "Keep the focus on your own perspective; AI may help develop the sound, but this paragraph is the origin of the idea."
+      },
+      "ai": {
+        "lyrics": {
+          "percent": null,
+          "model": ""
+        },
+        "melody": {
+          "percent": null,
+          "model": ""
+        },
+        "vocals": {
+          "percent": null,
+          "model": ""
+        }
+      },
+      "elements": [
+        {
+          "name": "Lyrics",
+          "method": "Describe your writing and editing process",
+          "tools": []
+        },
+        {
+          "name": "Drums",
+          "method": "Describe the groove and editing",
+          "tools": []
+        },
+        {
+          "name": "Bass",
+          "method": "Describe instrument and sound design",
+          "tools": []
+        },
+        {
+          "name": "Melody / synths",
+          "method": "Describe composition and arrangement",
+          "tools": []
+        },
+        {
+          "name": "Vocals",
+          "method": "Describe performance and processing",
+          "tools": []
+        }
+      ]
+    }
+  ]
+}
