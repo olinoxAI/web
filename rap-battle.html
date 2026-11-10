@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Rap Battle: Suno vs YuE2</title>
+  <style>
+  :root { color-scheme: dark; --bg:#15121c; --card:#24202c; --border:#494052; --text:#fbf8fd; --muted:#bdb6ca; --pink:#fa5b90; --blue:#45c9e9; }
+  * { box-sizing:border-box; }
+  html, body { width:100%; height:100%; padding:0; margin:0; overflow:hidden; }
+  body { background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { width:100%; padding:6px 8px; }
+  header { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:0 0 5px; height:19px; }
+  h1 { font-size:14px; font-weight:750; letter-spacing:-.02em; margin:0; line-height:18px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .subtitle { color:var(--muted); font-size:10px; white-space:nowrap; }
+  .tracks { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
+  .track { display:flex; align-items:center; gap:7px; min-width:0; min-height:57px; padding:6px 8px; background:var(--card); border:1px solid var(--border); border-radius:9px; }
+  .play { display:grid; place-items:center; flex:none; width:32px; height:32px; padding:0; border:0; border-radius:50%; background:var(--pink); color:#15121c; font:700 14px system-ui,sans-serif; cursor:pointer; }
+  .track.yue2 .play { background:var(--blue); }
+  .play:focus-visible, .seek:focus-visible { outline:2px solid white; outline-offset:2px; }
+  .details { display:flex; flex-direction:column; gap:5px; flex:1; min-width:0; }
+  .trackhead { display:flex; align-items:baseline; gap:5px; justify-content:space-between; min-width:0; line-height:13px; }
+  .name { font-size:12px; font-weight:700; white-space:nowrap; }
+  .time { font:10px/12px ui-monospace,Consolas,monospace; color:var(--muted); white-space:nowrap; }
+  .seek { display:block; width:100%; height:10px; padding:0; margin:0; cursor:pointer; accent-color:var(--pink); }
+  .track.yue2 .seek { accent-color:var(--blue); }
+  audio { display:none; }
+  @media(max-width:410px) {
+    main { padding:5px; }
+    header { margin-bottom:3px; }
+    .subtitle { display:none; }
+    .tracks { gap:5px; }
+    .track { padding:5px; gap:5px; min-height:56px; }
+    .play { width:27px; height:27px; font-size:12px; }
+    .name { font-size:11px; }
+    .time { font-size:9px; }
+  }
+  @media (prefers-reduced-motion: no-preference) { .play { transition:filter .12s ease; } .play:hover { filter:brightness(1.12); } }
+</style>
+</head>
+<body>
+<main>
+  <header><h1>🎤 Hip-Hop Battle: Suno vs YuE2</h1><span class="subtitle">Listen to both tracks</span></header>
+  <div class="tracks">
+      <section class="track suno">
+        <button class="play" type="button" aria-label="Play Suno">▶</button>
+        <div class="details">
+          <div class="trackhead"><span class="name">Suno</span><span class="time">0:00 / --:--</span></div>
+          <input class="seek" type="range" min="0" max="1000" value="0" disabled aria-label="Seek Suno track">
+        </div>
+        <audio preload="metadata" src="/musicbattle/hiphop-suno.mp3"></audio>
+      </section>
+      <section class="track yue2">
+        <button class="play" type="button" aria-label="Play YuE2">▶</button>
+        <div class="details">
+          <div class="trackhead"><span class="name">YuE2</span><span class="time">0:00 / --:--</span></div>
+          <input class="seek" type="range" min="0" max="1000" value="0" disabled aria-label="Seek YuE2 track">
+        </div>
+        <audio preload="metadata" src="/musicbattle/hiphop-yue2.wav"></audio>
+      </section>
+  </div>
+</main>
+<script>
+  (() => {
+    const tracks = Array.from(document.querySelectorAll('.track'));
+    const format = seconds => {
+      if (!Number.isFinite(seconds)) return '--:--';
+      seconds = Math.max(0, Math.floor(seconds));
+      return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+    };
+    tracks.forEach(track => {
+      const audio = track.querySelector('audio');
+      const button = track.querySelector('.play');
+      const seek = track.querySelector('.seek');
+      const time = track.querySelector('.time');
+      const name = track.querySelector('.name').textContent;
+      const sync = () => {
+        const duration = audio.duration;
+        time.textContent = `${format(audio.currentTime)} / ${format(duration)}`;
+        if (Number.isFinite(duration) && duration > 0) {
+          seek.value = String(Math.round(audio.currentTime / duration * 1000));
+          seek.disabled = false;
+        } else { seek.value = '0'; seek.disabled = true; }
+        button.textContent = audio.paused ? '▶' : '❚❚';
+        button.setAttribute('aria-label', `${audio.paused ? 'Play' : 'Pause'} ${name}`);
+      };
+      button.addEventListener('click', () => {
+        if (!audio.paused) audio.pause();
+        else {
+          tracks.forEach(other => {
+            const player = other.querySelector('audio');
+            if (player !== audio) player.pause();
+          });
+          audio.play().catch(() => { button.title = 'Unable to play audio. Check the MP3 URL.'; sync(); });
+        }
+      });
+      seek.addEventListener('input', () => {
+        if (Number.isFinite(audio.duration) && audio.duration > 0)
+          audio.currentTime = Number(seek.value) / 1000 * audio.duration;
+      });
+      ['loadedmetadata','timeupdate','durationchange','play','pause','ended'].forEach(type => audio.addEventListener(type, sync));
+      audio.addEventListener('error', () => { time.textContent = 'MP3 unavailable'; button.title = 'Check the audio file URL'; });
+      sync();
+    });
+  })();
+</script>
+</body>
+</html>
