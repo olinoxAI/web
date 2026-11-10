@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Punk Battle | Suno vs YuE2</title>
+  <style>
+    :root { color-scheme: dark; --bg: #111019; --card: #211c29; --text: #f8f5fb; --muted: #bcb6c5; --border: #494052; --accent: #fc5b8f; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 14px; background: transparent; color: var(--text); font: 15px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { max-width: 850px; margin: auto; padding: 18px; background: var(--bg); border-radius: 14px; border: 1px solid #2f2937; }
+    h1 { margin: 0 0 3px; font-size: 21px; line-height: 1.25; letter-spacing: -0.025em; }
+    .intro { color: var(--muted); margin: 0 0 15px; font-size: 13px; }
+    .tracks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .track { min-width: 0; border: 1px solid var(--border); border-radius: 12px; padding: 13px; background: var(--card); }
+    .top { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px #fc5b8f22; flex: none; }
+    .track:nth-child(2) .indicator { background: #42cdef; box-shadow: 0 0 0 3px #42cdef22; }
+    h2 { font-size: 16px; margin: 0; }
+    .tag { margin-left: auto; font-size: 11px; color: var(--muted); white-space: nowrap; }
+    audio { display: block; width: 100%; height: 42px; }
+    .footer { margin: 13px 0 0; font-size: 12px; color: var(--muted); }
+    @media (max-width: 570px) { body { padding: 6px; } main { padding: 13px; } .tracks { grid-template-columns: 1fr; } h1 { font-size: 19px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>🤘 Punk Battle: Suno vs YuE2</h1>
+    <div class="tracks">
+      <section class="track" aria-labelledby="suno-title">
+        <div class="top"><span class="indicator" aria-hidden="true"></span><h2 id="suno-title">Suno</h2><span class="tag">Track A</span></div>
+        <audio controls preload="none" aria-label="Play Suno punk track">
+          <source src="/musicbattle/punk-suno.mp3" type="audio/mpeg">
+          Your browser does not support audio playback.
+        </audio>
+      </section>
+      <section class="track" aria-labelledby="yue2-title">
+        <div class="top"><span class="indicator" aria-hidden="true"></span><h2 id="yue2-title">YuE2</h2><span class="tag">Track B</span></div>
+        <audio controls preload="none" aria-label="Play YuE2 punk track">
+          <source src="/musicbattle/punk-yue2.mp3" type="audio/mpeg">
+          Your browser does not support audio playback.
+        </audio>
+      </section>
+    </div>
+  </main>
+  <script>
+    // Pause the other track when starting a new one.
+    const players = [...document.querySelectorAll('audio')];
+    players.forEach(player => player.addEventListener('play', () => {
+      players.forEach(other => { if (other !== player) other.pause(); });
+    }));
+  </script>
+</body>
+</html>
